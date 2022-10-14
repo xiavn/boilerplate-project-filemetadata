@@ -2,13 +2,7 @@ var express = require("express");
 var cors = require("cors");
 require("dotenv").config();
 
-const mongoose = require("mongoose");
 const app = express();
-
-mongoose.connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
 
 app.use(cors());
 app.use("/public", express.static(process.cwd() + "/public"));
